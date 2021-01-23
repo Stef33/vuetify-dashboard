@@ -12,6 +12,7 @@
       >
         {{ link.label }}
       </v-btn>
+      <v-btn @click="toggleTheme" text rounded>Toggle Theme</v-btn>
     </v-app-bar>
     <v-main>
       <router-view></router-view>
@@ -60,6 +61,11 @@ export default {
           url: '/dashboard'
         }
       ]
+    }
+  },
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   }
 }
